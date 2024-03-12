@@ -1,9 +1,10 @@
-// Script to handle the dropdown functionality
-document.addEventListener('DOMContentLoaded', (event) => {
-    const aboutBtn = document.getElementById('about-btn');
-    const aboutContent = document.getElementById('about-content');
+// Simple smooth scroll function
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-    aboutBtn.addEventListener('click', function() {
-        aboutContent.classList.toggle('hidden');
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
     });
+  });
 });

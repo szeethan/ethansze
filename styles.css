@@ -1,40 +1,12 @@
-/* Simplified CSS based on the provided website */
-body {
-    font-family: Arial, sans-serif;
+details > summary {
+  list-style: none;
 }
-header {
-    /* Styles for header */
+details > summary::-webkit-details-marker {
+  display: none;
 }
-main {
-    /* Styles for main content */
+.arrow {
+  transition: transform 0.3s ease;
 }
-#about {
-    /* Styles for the about section */
-    margin-top: 2rem;
-    text-align: center;
-}
-#about-btn {
-    /* Styles for the about button */
-    background-color: #4CAF50; /* Green */
-    color: white;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    display: inline-block;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 0.25rem;
-    margin-top: 1rem;
-}
-#about-content {
-    /* Hidden by default */
-    display: none;
-    margin-top: 1rem;
-    text-align: left;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-}
-footer {
-    /* Styles for footer */
+details[open] .arrow {
+  transform: rotate(-180deg);
 }
