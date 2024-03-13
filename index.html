@@ -2,76 +2,240 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Portfolio Website </title>
-  <link href="styles.css" rel="stylesheet">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>ETHAN SZE | Portfolio Website</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+  /* Additional custom styles can go here */
+  .link-arrow {
+    display: inline-block;
+    margin-left: 4px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .nav-link:hover .link-arrow {
+    transform: translateY(-2px);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  details[open] summary ~ * {
+    animation: smoothOpen 0.5s ease-in-out forwards;
+  }
+  @keyframes smoothOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  details summary {
+    cursor: pointer;
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  </style>
 </head>
-<body class="bg-white text-black font-sans">
+<body class="bg-white text-black font-serif leading-normal px-10 py-6">
   <!-- Header -->
-  <header class="flex justify-between items-center p-8">
+  <header class="flex justify-between items-start p-8">
     <div>
-      <a href="#" class="hover:no-underline">
-        <h1 class="text-4xl font-bold hover:shadow-lg">ETHAN SZE</h1>
+      <a href="#about" class="hover:no-underline">
+        <h1 class="text-xl font-bold hover:shadow-lg">ETHAN SZE</h1>
       </a>
-      <p class="mt-1">Junior Analyst at Affinity Asset Advisors</p>
     </div>
-    <nav>
-      <ul class="flex space-x-4">
-        <li><a href="#work" class="text-gray-600 hover:text-gray-900 hover:shadow-lg">WORK</a></li>
-        <li><a href="#leadership" class="text-gray-600 hover:text-gray-900 hover:shadow-lg">LEADERSHIP</a></li>
-        <li><a href="#strategy" class="text-gray-600 hover:text-gray-900 hover:shadow-lg">STRATEGY</a></li>
-        <li><a href="#collaboration" class="text-gray-600 hover:text-gray-900 hover:shadow-lg">COLLABORATION</a></li>
-        <li><a href="#about" class="text-gray-600 hover:text-gray-900 hover:shadow-lg">ABOUT ME</a></li>
-      </ul>
+    <nav class="space-x-4">
+      <a class="nav-link hover:underline" href="#blog">BLOG</a>
+      <a class="nav-link hover:underline" href="#about">ABOUT ME</a>
+      <a class="nav-link hover:underline" href="#work">WORK</a>
+      <a class="nav-link hover:underline" href="#leadership">LEADERSHIP</a>
+      <a class="nav-link hover:underline" href="#projects">PROJECTS</a>
     </nav>
   </header>
+<!-- Main content -->
+<main class="px-10 py-6 max-w-3xl">
+  <section class="text-left">
+  <h2 class="text-lg mb-4">
+    Hi, I'm Ethan Sze,<br>
+    Data Science and Finance Sophomore at UMD
+  </h2>
+  <p class="text-3xl leading-relaxed">
+    I am seeking to gain exposure in the field of quantitative finance. 
+    I have already taken a few foundational courses in data analysis, statistics, 
+    and data programming. These courses have given me a solid 
+    foundation to build upon, and I look to continue developing my skills through 
+    coursework, internships, and personal projects. After graduating, I aspire to 
+    enter the workforce as an analyst and combine my love for finance and data 
+    science to drive real world impact.
+  </p>
+  <ul class="mt-4">
+    <li class="nav-link">
+      <a href="#about"><u>About me</u>
+        <span class="link-arrow">
+          ↓
+        </span>
+      </a>
+    </li>
+  <li class="nav-link">
+  <a href="#work"><u>Work</u>
+    <span class="link-arrow">
+      ↓
+    </span>
+  </a>
+  </li>
+  <li class="nav-link">
+  <a href="#leadership"><u>Leadership</u>
+    <span class="link-arrow">
+      ↓
+    </span>
+  </a>
+  </li>
+  <li class="nav-link">
+  <a href="#projects"><u>Projects</u>
+    <span class="link-arrow">
+      ↓
+    </span>
+  </a>
+  </li>
+  <li class="nav-link">
+  <a href="#more"><u>There's more</u>
+    <span class="link-arrow">
+      ↓
+    </span>
+  </a>
+  </li>
+  </ul>
+  </section>
+</main>
 
-  <!-- Main Content -->
-  <main class="container mx-auto my-12">
-    <!-- About Me Section -->
-    <section id="about" class="space-y-6">
-      <h2 class="text-3xl font-bold hover:shadow-lg">About Me</h2>
-      <!-- About Me content goes here -->
-    </section>
-    
-    <!-- Work Experience Section -->
-    <section id="work" class="space-y-6 mb-12">
-      <h2 class="text-3xl font-bold">Experiences</h2>
-      <!-- Work Experience Dropdowns -->
-      <div class="space-y-4">
-        <!-- Repeat this block for each experience -->
-        <details class="border-b border-gray-200">
-          <summary class="flex justify-between items-center p-4 cursor-pointer">
-            <span class="flex items-center">
-              <!-- Replace with actual image paths -->
-              <img src="logo-workiva.png" alt="Workiva Logo" class="h-6 w-6 mr-3">
-              <span class="font-medium text-gray-800">Workiva</span>
-            </span>
-            <span class="arrow">▼</span>
-          </summary>
-          <div class="mt-2 pl-8 pr-4 pb-4 text-gray-600">
-            <!-- Drop-down content goes here -->
-            Detailed information about the Workiva experience.
-          </div>
-        </details>
-        <!-- Add other experiences in a similar manner -->
+<div class="code-container">
+  <pre><code><span class="keyword">class</span> ethan_sze:
+    university = <span class="string">"University of Maryland, College Park"</span>
+    graduation = <span class="string">"May 2026"</span>
+    majors = [<span class="string">"Computer Science"</span>, <span class="string">"Finance"</span>]
+    recent_experiences = [<span class="string">"Affinity Asset Advisors"</span>, <span class="string">"CSA"</span>, <span class="string">"DECA at UMD"</span>]
+    <span class="keyword">def</span> <span class="function">my_journey</span>(<span class="builtin">self</span>):
+        <span class="keyword">while</span> <span class="builtin">True</span>:
+            <span class="builtin">self</span>.<span class="function">learn_and_progress</span>()
+
+    <span class="keyword">def</span> <span class="function">hello_world</span>(<span class="builtin">self</span>):
+        <span class="builtin">print</span>(<span class="string">"Welcome to my portfolio! Scroll down to discover more c:"</span>)
+  </code></pre>
+</div>
+
+  <!-- About Me Section -->
+ <section id="about" class="space-y-6">
+  <h2 class="text-xl font-bold">About Me</h2>
+    <!-- ... -->
+  </section>
+
+  <!-- Work Section -->
+  <section id="work" class="space-y-6">
+    <h2 class="text-xl font-bold">Work Experience</h2>
+    <!-- Example Work Experience Dropdown -->
+    <details class="group border-b border-gray-200">
+      <summary class="flex justify-between items-center p-4 cursor-pointer">
+        <div class="flex items-center">
+          <img src="affinityassetadvisors_logo.jpeg" alt="Company Logo" class="h-8 w-8 mr-3">
+          <span>Affinity Asset Advisors</span>
+        </div>
+        <span class="transform group-open:-rotate-180 transition duration-300">▼</span>
+      </summary>
+      <div class="p-4">
+        <p>At Affinity Asset Advisors, 
+          I have been working as an Analyst Intern since 2022, stationed in New York, NY. In this role, I have spearheaded efforts in biotech research, focusing on developing Discounted Cash Flow (DCF) models. This work has been instrumental in improving the accuracy of financial projections by 20% and boosting investor confidence by 15%. These enhancements have been critical for the firm's strategic decision-making and market positioning, highlighting my impact in areas crucial for business growth and investor relations. <br>
+          In my capacity as an intern, I have also been heavily involved in utilizing R programming for conducting Monte Carlo simulations. This technical endeavor was aimed at evaluating the efficacy of one-arm and two-arm clinical trials. Through this sophisticated analysis, I significantly improved the accuracy of trial outcomes. The insights gained from this work have contributed to strategic planning and risk management, underlining my role in advancing the company's research capabilities and decision-making processes.
+          Additionally, my tenure at Affinity Asset Advisors has allowed me to drive the exploration and development of paradigm-shifting opportunities within the realm of biotech research. My ability to effectively communicate research findings and modeling results to the company's executives has fostered an environment of forward-thinking and innovation. This role has not only enabled me to contribute to the company's strategic initiatives but also to develop a keen understanding of the biotech industry's research and development landscape.</p>
       </div>
+    </details>
+    <!-- ... -->
+  </section>
 
-      <h2 class="text-3xl font-bold mt-12">On-Campus Involvement</h2>
-      <!-- On-campus involvement dropdowns follow the same pattern -->
-    </section>
-    
-    <!-- Additional sections can follow -->
+  <!-- Leadership Section -->
+  <section id="leadership" class="space-y-6">
+    <h2 class="text-xl font-bold">Leadership Roles</h2>  
+     <!-- Leadership Dropdown -->
+     <details class="group border-b border-gray-200">
+      <summary class="flex justify-between items-center p-4 cursor-pointer">
+        <div class="flex items-center">
+          <img src="csa.jpeg" alt="Company Logo" class="h-8 w-8 mr-3">
+          <span>Chinese Student Association</span>
+        </div>
+        <span class="transform group-open:-rotate-180 transition duration-300">▼</span>
+      </summary>
+      <div class="p-4">
+        <p>At Affinity Asset Advisors, 
+          I have been working as an Analyst Intern since 2022, stationed in New York, NY. In this role, I have spearheaded efforts in biotech research, focusing on developing Discounted Cash Flow (DCF) models. This work has been instrumental in improving the accuracy of financial projections by 20% and boosting investor confidence by 15%. These enhancements have been critical for the firm's strategic decision-making and market positioning, highlighting my impact in areas crucial for business growth and investor relations. <br>
+          In my capacity as an intern, I have also been heavily involved in utilizing R programming for conducting Monte Carlo simulations. This technical endeavor was aimed at evaluating the efficacy of one-arm and two-arm clinical trials. Through this sophisticated analysis, I significantly improved the accuracy of trial outcomes. The insights gained from this work have contributed to strategic planning and risk management, underlining my role in advancing the company's research capabilities and decision-making processes.
+          Additionally, my tenure at Affinity Asset Advisors has allowed me to drive the exploration and development of paradigm-shifting opportunities within the realm of biotech research. My ability to effectively communicate research findings and modeling results to the company's executives has fostered an environment of forward-thinking and innovation. This role has not only enabled me to contribute to the company's strategic initiatives but also to develop a keen understanding of the biotech industry's research and development landscape.</p>
+      </div>
+    </details>
+    <details class="group border-b border-gray-200">
+      <summary class="flex justify-between items-center p-4 cursor-pointer">
+        <div class="flex items-center">
+          <img src="deca.jpeg" alt="Company Logo" class="h-8 w-8 mr-3">
+          <span>DECA at UMD</span>
+        </div>
+        <span class="transform group-open:-rotate-180 transition duration-300">▼</span>
+      </summary>
+      <div class="p-4">
+        <p>At Affinity Asset Advisors, 
+          I have been working as an Analyst Intern since 2022, stationed in New York, NY. In this role, I have spearheaded efforts in biotech research, focusing on developing Discounted Cash Flow (DCF) models. This work has been instrumental in improving the accuracy of financial projections by 20% and boosting investor confidence by 15%. These enhancements have been critical for the firm's strategic decision-making and market positioning, highlighting my impact in areas crucial for business growth and investor relations. <br>
+          In my capacity as an intern, I have also been heavily involved in utilizing R programming for conducting Monte Carlo simulations. This technical endeavor was aimed at evaluating the efficacy of one-arm and two-arm clinical trials. Through this sophisticated analysis, I significantly improved the accuracy of trial outcomes. The insights gained from this work have contributed to strategic planning and risk management, underlining my role in advancing the company's research capabilities and decision-making processes.
+          Additionally, my tenure at Affinity Asset Advisors has allowed me to drive the exploration and development of paradigm-shifting opportunities within the realm of biotech research. My ability to effectively communicate research findings and modeling results to the company's executives has fostered an environment of forward-thinking and innovation. This role has not only enabled me to contribute to the company's strategic initiatives but also to develop a keen understanding of the biotech industry's research and development landscape.</p>
+      </div>
+    </details>
+    <details class="group border-b border-gray-200">
+      <summary class="flex justify-between items-center p-4 cursor-pointer">
+        <div class="flex items-center">
+          <img src="csa.jpeg" alt="Company Logo" class="h-8 w-8 mr-3">
+          <span>Cloud Computing at UMD</span>
+        </div>
+        <span class="transform group-open:-rotate-180 transition duration-300">▼</span>
+      </summary>
+      <div class="p-4">
+        <p>At Affinity Asset Advisors, 
+          I have been working as an Analyst Intern since 2022, stationed in New York, NY. In this role, I have spearheaded efforts in biotech research, focusing on developing Discounted Cash Flow (DCF) models. This work has been instrumental in improving the accuracy of financial projections by 20% and boosting investor confidence by 15%. These enhancements have been critical for the firm's strategic decision-making and market positioning, highlighting my impact in areas crucial for business growth and investor relations. <br>
+          In my capacity as an intern, I have also been heavily involved in utilizing R programming for conducting Monte Carlo simulations. This technical endeavor was aimed at evaluating the efficacy of one-arm and two-arm clinical trials. Through this sophisticated analysis, I significantly improved the accuracy of trial outcomes. The insights gained from this work have contributed to strategic planning and risk management, underlining my role in advancing the company's research capabilities and decision-making processes.
+          Additionally, my tenure at Affinity Asset Advisors has allowed me to drive the exploration and development of paradigm-shifting opportunities within the realm of biotech research. My ability to effectively communicate research findings and modeling results to the company's executives has fostered an environment of forward-thinking and innovation. This role has not only enabled me to contribute to the company's strategic initiatives but also to develop a keen understanding of the biotech industry's research and development landscape.</p>
+      </div>
+    </details>
+    <!-- ... -->
+    <!-- ... -->
+  </section>
 
-  </main>
+  <!-- Projects Section -->
+  <section id="projects" class="space-y-6">
+    <h2 class="text-xl font-bold">All Projects</h2>
+     <!-- Example Work Experience Dropdown -->
+     <details class="group border-b border-gray-200">
+      <summary class="flex justify-between items-center p-4 cursor-pointer">
+        <div class="flex items-center">
+          <img src="affinityassetadvisors_logo.jpeg" alt="Company Logo" class="h-8 w-8 mr-3">
+          <span>Affinity Asset Advisors</span>
+        </div>
+        <span class="transform group-open:-rotate-180 transition duration-300">▼</span>
+      </summary>
+      <div class="p-4">
+        <p>At Affinity Asset Advisors, 
+          I have been working as an Analyst Intern since 2022, stationed in New York, NY. In this role, I have spearheaded efforts in biotech research, focusing on developing Discounted Cash Flow (DCF) models. This work has been instrumental in improving the accuracy of financial projections by 20% and boosting investor confidence by 15%. These enhancements have been critical for the firm's strategic decision-making and market positioning, highlighting my impact in areas crucial for business growth and investor relations. <br>
+          In my capacity as an intern, I have also been heavily involved in utilizing R programming for conducting Monte Carlo simulations. This technical endeavor was aimed at evaluating the efficacy of one-arm and two-arm clinical trials. Through this sophisticated analysis, I significantly improved the accuracy of trial outcomes. The insights gained from this work have contributed to strategic planning and risk management, underlining my role in advancing the company's research capabilities and decision-making processes.
+          Additionally, my tenure at Affinity Asset Advisors has allowed me to drive the exploration and development of paradigm-shifting opportunities within the realm of biotech research. My ability to effectively communicate research findings and modeling results to the company's executives has fostered an environment of forward-thinking and innovation. This role has not only enabled me to contribute to the company's strategic initiatives but also to develop a keen understanding of the biotech industry's research and development landscape.</p>
+      </div>
+    </details>
+    <!-- ... -->
+    <!-- ... -->
+  </section>
 
   <!-- Footer -->
   <footer class="p-8">
-    <!-- Footer content -->
+    <p class="text-center">© 2024 ETHAN SZE. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript for smooth scrolling -->
+  <!-- JavaScript for interactive elements -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,12 +1,37 @@
+/* Tailwind CSS along with custom CSS */
+/* Additional styles for the dropdown effect */
 details > summary {
-  list-style: none;
+    list-style: none;
 }
+  
 details > summary::-webkit-details-marker {
-  display: none;
+    display: none; /* Remove the default arrow icon */
 }
-.arrow {
-  transition: transform 0.3s ease;
+  
+.group-open > summary > .transform {
+    transform: rotate(-180deg); /* Rotate arrow when dropdown is open */
 }
-details[open] .arrow {
-  transform: rotate(-180deg);
+  
+/* Custom hover effect for links */
+a:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Styles for the code container to look like a terminal */
+.code-container {
+    background-color: #002b36 !important; /* Dark background for the terminal */
+    color: #839496 !important; /* Light text color for the terminal */
+    padding: 20px;
+    border-radius: 4px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 15px; /* Adjust size as needed */
+    line-height: 22px; /* Adjust line height as needed */
+    overflow-x: auto; /* Adds horizontal scrolling if code overflows */
+}
+
+/* Syntax highlighting colors */
+.keyword { color: #859900; } /* Green for keywords */
+.string { color: #2aa198; } /* Cyan for strings */
+.function { color: #268bd2; } /* Blue for function names */
+.comment { color: #93a1a1; } /* Lighter text for comments */
+.builtin { color: #d33682; } /* Magenta for built-in literals */
